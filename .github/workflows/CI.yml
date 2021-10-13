@@ -39,7 +39,7 @@ jobs:
       - name: Install SQLFluff
         run: "pip install sqlfluff==0.3.6"
       - name: Lint models
-        run: "sqlfluff lint models" 
+        run: "sqlfluff lint sql_files" 
   # linter:
    # runs-on: ubuntu-latest
    # steps:
