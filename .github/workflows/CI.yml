@@ -29,15 +29,25 @@ jobs:
       - name: Run a one-line script
         run: echo Hello, world!
 
-   
-  linter:
+  lint-models:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Super-Linter
-        uses: github/super-linter@v4.8.1
-        env: 
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      - uses: "actions/checkout@v2"
+      - uses: "actions/setup-python@v2"
+        with:
+            python-version: "3.8"
+      - name: Install SQLFluff
+        run: "pip install sqlfluff==0.3.6"
+      - name: Lint models
+        run: "sqlfluff lint models" 
+  # linter:
+   # runs-on: ubuntu-latest
+   # steps:
+    #  - uses: actions/checkout@v2
+    #  - name: Super-Linter
+    #    uses: github/super-linter@v4.8.1
+    #    env: 
+    #      GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           # VALIDATE_SQL: true
   
   
