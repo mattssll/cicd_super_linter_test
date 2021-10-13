@@ -38,5 +38,6 @@ jobs:
         uses: github/super-linter@v4.8.1
         env: 
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-        
+          # VALIDATE_SQL: true
+  
   
