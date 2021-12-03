@@ -1,1 +1,1 @@
-SELECT * FROM staging.imaginary_table;
+SELECT * FROM staging.imaginary_tablee;
